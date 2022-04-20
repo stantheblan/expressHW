@@ -7,11 +7,6 @@ let responses = ["It is certain", "It is decidedly so", "Without a doubt",
 "Ask again later","Better not tell you now", "Cannot predict now", 
 "Concentrate and ask again","Don't count on it", "My reply is no", "My sources say no","Outlook not so good", "Very doubtful"]
 
-
-app.get('/', (req, res) => {    
-    res.send(`99 Bottles of beer on the wall. <br> <a href="./98"}>take one down, pass it around</a>`);
-});
-
 /*
   - On the home page (`get "/"`), users should see:
   - "99 Bottles of beer on the wall"
@@ -24,6 +19,9 @@ app.get('/', (req, res) => {
   - Add a link to start over, which directs the user back to the home page.
 */
 
+app.get('/', (req, res) => {    
+    res.send(`99 Bottles of beer on the wall. <br> <a href="./98"}>take one down, pass it around</a>`);
+});
 app.get('/:beer', (req, res) => {
     if (req.params.beer > 0) {
         res.send(req.params.beer + ` Bottles of beer on the wall. <br> 
